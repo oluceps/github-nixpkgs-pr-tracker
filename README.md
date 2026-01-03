@@ -2,6 +2,9 @@
 
 A Tampermonkey script designed to improve the experience of Nix users by tracking the merge status of Pull Requests across different branches.
 
+<img width="1289" height="791" alt="image" src="https://github.com/user-attachments/assets/094442aa-90a8-44d0-851d-2590c62477d8" />
+
+
 When viewing a merged PR on the NixOS/nixpkgs repository, this script adds a button to check if the changes have reached specific branches such as `nixos-unstable`, `master`, or `staging-next`.
 
 [Click to install script](https://github.com/oluceps/github-nixpkgs-pr-tracker/raw/refs/heads/goshujin/main.user.js)
