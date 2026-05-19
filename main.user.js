@@ -269,17 +269,16 @@
         if (document.querySelector('.nix-checker-btn')) return;
 
         // 2. Check if PR is merged (via DOM)
-        const stateBadge = document.querySelector('.State[title*="Merged"]');
-        const isMergedText = document.querySelector('.State--purple');
+        const stateBadge = document.querySelector('[data-status="pullMerged"]');
 
         // If not merged, do nothing
-        if (!stateBadge && (!isMergedText || !isMergedText.innerText.includes('Merged'))) {
+        if (!(stateBadge && stateBadge.innerText.includes('Merged'))) {
             return;
         }
 
         // 3. Find PR Number location
         // Typically in <h1 class="gh-header-title ..."> ... <span class="... number">#12345</span> </h1>
-        const titleContainer = document.querySelector('.gh-header-title');
+        const titleContainer = document.querySelector('h1[data-component="PH_Title"]');
         if (!titleContainer) return;
 
         const numberSpan = titleContainer.querySelector('span.color-fg-muted, span.f1-light');
